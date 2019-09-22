@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+    <!--<TextView
+        android:id = "@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "@string/exp2_1"
+        />-->
+
+    <!--    <TextView
+        android:id="@+id/textView2_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ff0000"
+        android:text="@string/exp2_2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button2_2"
+        tools:ignore="MissingConstraints" />-->
+
+    <!--   <TextView
+        android:id="@+id/myTextView2_4"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginLeft="29dp"
+        android:text="请输入密码:"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints" />
+    <EditText
+        android:id="@+id/myEditText2_4"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="33dp"
+        android:inputType="text"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/myButton2_4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="29dp"
+        android:text="确定"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:id="@+id/myTextView2_40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="29dp"
+        android:textSize="24sp"
+        />-->
+
+    <!--    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButton2_51"
+        android:text="按钮1\"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButton2_52"
+        android:text="按钮2"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButton2_53"
+        android:text="按钮3"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButton2_54"
+        android:text="按钮4"
+        />-->
+
+    <!--    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mImageView2_6"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="快乐大坑"
+        android:textSize="18sp"
+        />-->
+
+    <!--    <TableRow>&lt;!&ndash;第一行&ndash;&gt;
+        <ImageView
+            android:id="@+id/mImage2_71"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img"
+            />
+
+        <ImageView
+            android:id="@+id/mImage2_72"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img" />
+    </TableRow>
+    <TableRow>&lt;!&ndash;第二行&ndash;&gt;
+        <TextView
+            android:id="@+id/textView2_73"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/mImage2_74"
+            android:src="@drawable/img"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            />
+        <ImageView
+            android:id="@+id/mImage2_75"
+            android:src="@drawable/img"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            />
+    </TableRow>
+    <TableRow>&lt;!&ndash;第三行&ndash;&gt;
+        <TextView
+            android:id="@+id/textView2_76"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/textView2_77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/textView2_78"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/mImage2_79"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img"
+            />
+    </TableRow>-->
+
+    <!--    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lable2_8"
+        android:text="相对布局"
+        android:textSize="24sp"
+        />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit2_8"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@+id/lable2_8"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ok2_8"
+        android:layout_below="@+id/edit2_8"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dip"
+        android:text="ok"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/ok2_8"
+        android:layout_alignTop="@+id/ok2_8"
+        android:text="Cancle"
+        />-->
+
+    <!--    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_marginLeft="4px"
+        android:gravity="left"
+        android:text="0"
+        android:textSize="50dip"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:text="清除"
+        android:textSize="26sp"
+        />
+    <Button android:text="1" android:textSize="26sp" />
+    <Button android:text="2" android:textSize="26sp" />
+    <Button android:text="3" android:textSize="26sp" />
+    <Button android:text="+" android:textSize="26sp" />
+    <Button android:text="4" android:textSize="26sp" />
+    <Button android:text="5" android:textSize="26sp" />
+    <Button android:text="6" android:textSize="26sp" />
+    <Button android:text="-" android:textSize="26sp" />
+    <Button android:text="7" android:textSize="26sp" />
+    <Button android:text="8" android:textSize="26sp" />
+    <Button android:text="9" android:textSize="26sp" />
+    <Button android:text="*" android:textSize="26sp" />
+    <Button android:text="." android:textSize="26sp" />
+    <Button android:text="0" android:textSize="26sp" />
+    <Button android:text="=" android:textSize="26sp" />
+    <Button android:text="/" android:textSize="26sp" />-->
+
+    <!--    <ProgressBar
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProgreeBar2_10"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:max="200"
+        android:progress="50"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btu2_10"
+        android:text="增加"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btu2_101"
+        android:text="减少"
+        />-->
+
+<!--    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello2_11"
+        android:textSize="20sp"
+        />
+    <CheckBox
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check2_11_1"
+        android:text="@string/one2_11"
+        android:textSize="20sp"
+        />
+    <CheckBox
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check2_11_2"
+        android:text="@string/two2_11"
+        android:textSize="20sp"
+        />
+    <CheckBox
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check2_11_3"
+        android:text="@string/three2_11"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt2_11"
+        android:text=""
+        android:textSize="20sp"
+        />-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/imageTest"
+            android:layout_width="240dip"
+            android:layout_height="250dp"
+            android:src="@drawable/image_test1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/Btn_last"
+            android:layout_width="211dp"
+            android:layout_height="wrap_content"
+            android:text="上一张" />
+
+        <Button
+            android:id="@+id/Btn_next"
+            android:layout_width="211dp"
+            android:layout_height="wrap_content"
+            android:text="上一张" />
+    </LinearLayout>
+</LinearLayout>

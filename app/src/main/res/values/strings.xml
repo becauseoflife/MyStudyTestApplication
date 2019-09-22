@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">emmmm</string>
+<!--    <string name="hello_wrold">我喜欢Android 开发</string>
+    <string name="exp2_1">
+        \n    静夜思
+        \n  窗前明月光
+        \n  有人打开窗
+        \n  看见x光
+        \n  牙齿掉光光
+    </string>
+    <string name="exp2_2">Hello World, 这是exp2_2的界面！</string>
+    <string name="button2_2">点击我</string>
+    <string name="exp2_2_NewStr">改变了文本标签的内容！</string>-->
+
+    <string name="hello2_11">请选择播放歌曲</string>
+    <string name="one2_11">沙龙————陈奕迅</string>
+    <string name="two2_11">年少有为————李荣浩</string>
+    <string name="three2_11">演员————薛之谦</string>
+    <string name="btn2_11">获取选项值</string>
+</resources>
