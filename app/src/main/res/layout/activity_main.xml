@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    >
+    android:layout_gravity="center"
+    android:orientation="vertical">
     <!--<TextView
         android:id = "@+id/textView1"
         android:layout_width="wrap_content"
@@ -274,7 +274,8 @@
         android:text=""
         android:textSize="20sp"
         />-->
-    <LinearLayout
+
+<!--    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -303,5 +304,16 @@
             android:layout_width="211dp"
             android:layout_height="wrap_content"
             android:text="上一张" />
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <Gallery
+        android:id="@+id/Gallery01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spacing="10dip" />
+
+    <ImageSwitcher
+        android:id="@+id/ImageSwitcher01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

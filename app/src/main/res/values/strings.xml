@@ -17,4 +17,6 @@
     <string name="two2_11">年少有为————李荣浩</string>
     <string name="three2_11">演员————薛之谦</string>
     <string name="btn2_11">获取选项值</string>
+
+    <string name="hello">Hello World</string>
 </resources>

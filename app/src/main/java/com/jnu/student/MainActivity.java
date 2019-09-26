@@ -6,12 +6,21 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Gallery;
+import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
     Button okBtn2_11;
     TextView txt2_11;*/
 
-    ImageView img;
-    Button btn_last, btn_next;
+/*    ImageView img;
+    Button btn_last, btn_next;*/
+    private ImageSwitcher imgSwi;
+    private Gallery gallery;
     private int[] imgs={
             R.drawable.image_test1,
             R.drawable.image_test2,
@@ -40,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.image_test5,
             R.drawable.image_test6
     };
-    int index = 1;
+/*    int index = 1;*/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -76,14 +87,77 @@ public class MainActivity extends AppCompatActivity {
         txt2_11 = (TextView)findViewById(R.id.txt2_11);
         okBtn2_11.setOnClickListener(new click());*/
 
-        img = findViewById(R.id.imageTest);
+/*        img = findViewById(R.id.imageTest);
         btn_last = findViewById(R.id.Btn_last);
         btn_next = findViewById(R.id.Btn_next);
         btn_last.setOnClickListener(new mclick());
-        btn_next.setOnClickListener(new mclick());
+        btn_next.setOnClickListener(new mclick());*/
+
+        imgSwi = findViewById(R.id.ImageSwitcher01);
+        imgSwi.setFactory(new viewFactory());
+        // 设置淡入淡出方式
+        imgSwi.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
+        imgSwi.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
+        // 设置初始显示图片
+        imgSwi.setImageResource(R.drawable.image_test1);
+
+        gallery = findViewById(R.id.Gallery01);
+        // 设置监听，获取选择的图片
+        gallery.setOnItemSelectedListener(new onItemSelectedListener());
+        gallery.setSpacing(20); // 这是画廊图片之间的间隔
+        // 设置图片文件和显示方式的适配器
+        gallery.setAdapter(new baseAdapter());
+    }
+    // 通过建立一个viewFactory接口建立一个imageView图像视图
+    private class viewFactory implements ViewSwitcher.ViewFactory {
+        @Override
+        public View makeView() {
+            ImageView imageView = new ImageView(MainActivity.this);
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            imageView.setLayoutParams(new ImageSwitcher.LayoutParams(
+                    Gallery.LayoutParams.WRAP_CONTENT, Gallery.LayoutParams.WRAP_CONTENT));
+            return imageView;
+        }
+    }
+    // 实现选项监听接口，获取选择的图片
+    private class onItemSelectedListener implements AdapterView.OnItemSelectedListener {
+        @Override
+        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            Log.d("my_position", "onItemSelected: " + gallery.getItemAtPosition(i));
+            if (null != imgSwi && gallery.getItemAtPosition(i) != null)
+                imgSwi.setImageResource((int) gallery.getItemAtPosition(i));
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+
+        }
+    }
+    // 设置一个适配器，安排放在画廊的gallery的图片文件和显示方式
+    private class baseAdapter extends BaseAdapter {
+        // 取得gallery中的图片数量
+        public int getCount(){
+            return imgs.length;
+        }
+        public Object getItem(int position){
+            return null;
+        }
+        // 取得gallery内选择的某张图片文件
+        public long getItemId(int position){
+            return imgs[position];
+        }
+        // 将选择到的图片放置在imageView中，且设定显示方式为居中
+        public View getView(int position, View convertView, ViewGroup parent){
+            ImageView imageView = new ImageView(MainActivity.this);
+            Log.d("my_view", "getView: "+ position);
+            imageView.setImageResource(imgs[position]);
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            imageView.setLayoutParams(new Gallery.LayoutParams(60,60));
+            return imageView;
+        }
     }
 
-    private class mclick implements View.OnClickListener {
+/*    private class mclick implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             if (view == btn_last) {
@@ -94,7 +168,8 @@ public class MainActivity extends AppCompatActivity {
             index = (index + imgs.length) % imgs.length;
             img.setImageResource(imgs[index]);
         }
-    }
+    }*/
+
 /*    class mClick implements View.OnClickListener
     {
         public void onClick(View v)
