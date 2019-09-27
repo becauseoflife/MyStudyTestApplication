@@ -321,7 +321,8 @@
         android:layout_marginTop="100dp"
         />
 -->
-
+<!-- 例2-15 -->
+<!--
     <TextView
         android:id="@+id/textView2"
         android:layout_width="fill_parent"
@@ -350,5 +351,30 @@
         android:layout_height="wrap_content"
         android:text="带图标方式"
         android:textSize="20sp"/>
-
+-->
+<!--例2-18 SlidingDraw-->
+    <!--设置handle和content的id-->
+    <SlidingDrawer
+        android:id="@+id/slidingdrawer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:handle="@+id/handle"
+        android:content="@+id/content"
+        android:orientation="vertical">
+        <!--设置handle，就是用一个图标按钮来处理滑动抽屉事件-->
+        <ImageButton
+            android:id="@+id/handle"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:src="@drawable/arrow_up" />
+        <!--设置抽屉内容，当拖动抽屉时就会看见-->
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
+            android:focusable="true"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </SlidingDrawer>
 </LinearLayout>

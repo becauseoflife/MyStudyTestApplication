@@ -13,16 +13,19 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Gallery;
+import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SlidingDrawer;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,8 +64,15 @@ public class MainActivity extends AppCompatActivity {
 /*    int index = 1;*/
 
 /*    例2-15*/
-    ListView list;
-    Button btn1, btn2, btn3;
+/*    ListView list;
+    Button btn1, btn2, btn3;*/
+
+/*    例2-18 SlidingDraw*/
+    SlidingDrawer mDrawer;
+    ImageButton imgBtn;
+    ListView listView;
+    LinearLayout layout;
+    String[] data = new String[]{"王者荣耀", "刺激战场", "开心消消乐"};
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         btn_last.setOnClickListener(new mclick());
         btn_next.setOnClickListener(new mclick());*/
 
-/*例2-14*/
+        /*例2-14 Gallery and ImageSwitcher*/
 /*
         imgSwi = findViewById(R.id.ImageSwitcher01);
         imgSwi.setFactory(new viewFactory());
@@ -179,8 +189,8 @@ public class MainActivity extends AppCompatActivity {
             return imageView;
         }*/
 
-      /*  例2-15*/
-       btn1 = findViewById(R.id.btn1);
+        /*  例2-15 Toast*/
+/*       btn1 = findViewById(R.id.btn1);
        btn2 = findViewById(R.id.btn2);
        btn3 = findViewById(R.id.btn3);
        btn1.setOnClickListener(new mClick());
@@ -212,11 +222,52 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
         }
+    */
+
+    /* 例2-18 SlidingDraw*/
+    //在抽屉窗口中创建一个视图，显示数组内容
+    layout = findViewById(R.id.content);
+    listView = new ListView(MainActivity.this);
+    listView.setAdapter(new ArrayAdapter<String>(
+            MainActivity.this,
+            android.R.layout.simple_list_item_1,
+            data
+    ));
+    layout.addView(listView);
+    // 注册监听器
+    imgBtn = findViewById(R.id.handle);
+    mDrawer = findViewById(R.id.slidingdrawer);
+    mDrawer.setOnDrawerOpenListener(new mOpenListener());
+    mDrawer.setOnDrawerCloseListener(new mCloseListener());
+    mDrawer.setOnDrawerScrollListener(new mScrollListener());
+
     }
 
+    private class mOpenListener implements SlidingDrawer.OnDrawerOpenListener {
+        @Override
+        public void onDrawerOpened() {
+            imgBtn.setImageResource(R.drawable.arrow_down);
+        }
+    }
 
+    private class mCloseListener implements SlidingDrawer.OnDrawerCloseListener {
+        @Override
+        public void onDrawerClosed() {
+            imgBtn.setImageResource(R.drawable.arrow_up);
+        }
+    }
 
+    private class mScrollListener implements SlidingDrawer.OnDrawerScrollListener {
+        @Override
+        public void onScrollStarted() {
+            Toast.makeText(MainActivity.this, "拖动结束", Toast.LENGTH_SHORT).show();
+        }
 
+        @Override
+        public void onScrollEnded() {
+            Toast.makeText(MainActivity.this, "拖动开始", Toast.LENGTH_SHORT).show();
+        }
+    }
 /*    private class mclick implements View.OnClickListener {
         @Override
         public void onClick(View view) {
