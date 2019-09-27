@@ -305,6 +305,7 @@
             android:text="上一张" />
     </LinearLayout>-->
 
+<!--
     <Gallery
         android:id="@+id/Gallery01"
         android:layout_width="442dp"
@@ -319,33 +320,35 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         />
+-->
 
-    <!--
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="消息提示Toast"
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="消息提示Toast"
+        android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认方式"
+        android:textSize="20sp"/>
 
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自义定方式"
+        android:textSize="20sp"/>
 
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-    -->
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带图标方式"
+        android:textSize="20sp"/>
 
 </LinearLayout>

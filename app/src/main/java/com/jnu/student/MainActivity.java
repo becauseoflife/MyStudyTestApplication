@@ -7,6 +7,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -19,9 +20,12 @@ import android.widget.EditText;
 import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
 /*    ImageView img;
     Button btn_last, btn_next;*/
-    private ImageSwitcher imgSwi;
+/*例2-14*/
+/*    private ImageSwitcher imgSwi;
     private Gallery gallery;
     private int[] imgs={
             R.drawable.image_test1,
@@ -52,8 +57,13 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.image_test4,
             R.drawable.image_test5,
             R.drawable.image_test6
-    };
+    };*/
 /*    int index = 1;*/
+
+/*    例2-15*/
+    ListView list;
+    Button btn1, btn2, btn3;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -95,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         btn_last.setOnClickListener(new mclick());
         btn_next.setOnClickListener(new mclick());*/
 
+/*例2-14*/
+/*
         imgSwi = findViewById(R.id.ImageSwitcher01);
         imgSwi.setFactory(new viewFactory());
         // 设置淡入淡出方式
@@ -165,8 +177,43 @@ public class MainActivity extends AppCompatActivity {
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
             return imageView;
+        }*/
+
+      /*  例2-15*/
+       btn1 = findViewById(R.id.btn1);
+       btn2 = findViewById(R.id.btn2);
+       btn3 = findViewById(R.id.btn3);
+       btn1.setOnClickListener(new mClick());
+       btn2.setOnClickListener(new mClick());
+       btn3.setOnClickListener(new mClick());
+    }
+
+    private class mClick implements View.OnClickListener {
+        Toast toast;
+        LinearLayout toastView;
+        ImageView imageCodeProject;
+        @Override
+        public void onClick(View view) {
+            if(view == btn1){
+                Toast.makeText(getApplicationContext(),"默认Toast方式", Toast.LENGTH_SHORT).show();
+            }
+            else if (view == btn2){
+                toast = Toast.makeText(getApplicationContext(), "自义定方式", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+            else if (view == btn3){
+                toast = Toast.makeText(getApplicationContext(), "带图标的Toast", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 40);
+                toastView = (LinearLayout) toast.getView();     // 定义视图
+                imageCodeProject = new ImageView(MainActivity.this);
+                imageCodeProject.setImageResource(R.drawable.img);  // 获取图标资源
+                toastView.addView(imageCodeProject, 0); // 在视图中添加图标
+                toast.show();
+            }
         }
     }
+
 
 
 
