@@ -2,6 +2,8 @@ package com.jnu.student;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -99,14 +101,14 @@ public class MainActivity extends AppCompatActivity {
         imgSwi.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
         imgSwi.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
         // 设置初始显示图片
-        imgSwi.setImageResource(R.drawable.image_test1);
+        imgSwi.setImageResource(R.drawable.image_test2);
 
         gallery = findViewById(R.id.Gallery01);
         // 设置监听，获取选择的图片
         gallery.setOnItemSelectedListener(new onItemSelectedListener());
         gallery.setSpacing(20); // 这是画廊图片之间的间隔
         // 设置图片文件和显示方式的适配器
-        gallery.setAdapter(new baseAdapter());
+        gallery.setAdapter(new adapter(this));
     }
     // 通过建立一个viewFactory接口建立一个imageView图像视图
     private class viewFactory implements ViewSwitcher.ViewFactory {
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             ImageView imageView = new ImageView(MainActivity.this);
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.setLayoutParams(new ImageSwitcher.LayoutParams(
-                    Gallery.LayoutParams.WRAP_CONTENT, Gallery.LayoutParams.WRAP_CONTENT));
+                    Gallery.LayoutParams.FILL_PARENT, Gallery.LayoutParams.FILL_PARENT));
             return imageView;
         }
     }
@@ -123,9 +125,7 @@ public class MainActivity extends AppCompatActivity {
     private class onItemSelectedListener implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            Log.d("my_position", "onItemSelected: " + gallery.getItemAtPosition(i));
-            if (null != imgSwi && gallery.getItemAtPosition(i) != null)
-                imgSwi.setImageResource((int) gallery.getItemAtPosition(i));
+                imgSwi.setImageResource(imgs[i]);
         }
 
         @Override
@@ -134,28 +134,41 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     // 设置一个适配器，安排放在画廊的gallery的图片文件和显示方式
-    private class baseAdapter extends BaseAdapter {
+    private class adapter extends BaseAdapter {
+        private Context mContext;
+
+        public adapter(Context mContext) {
+            this.mContext = mContext;
+        }
+
         // 取得gallery中的图片数量
         public int getCount(){
             return imgs.length;
         }
         public Object getItem(int position){
-            return null;
+            return position;
         }
         // 取得gallery内选择的某张图片文件
         public long getItemId(int position){
-            return imgs[position];
+            return position;
         }
         // 将选择到的图片放置在imageView中，且设定显示方式为居中
         public View getView(int position, View convertView, ViewGroup parent){
-            ImageView imageView = new ImageView(MainActivity.this);
-            Log.d("my_view", "getView: "+ position);
+            ImageView imageView = new ImageView(mContext);
             imageView.setImageResource(imgs[position]);
+            // 设置边界对齐
+            imageView.setAdjustViewBounds(true);
+            // 设置布局参数
+            imageView.setLayoutParams(new Gallery.LayoutParams(
+                    Gallery.LayoutParams.WRAP_CONTENT, Gallery.LayoutParams.WRAP_CONTENT));
+
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            imageView.setLayoutParams(new Gallery.LayoutParams(60,60));
+
             return imageView;
         }
     }
+
+
 
 /*    private class mclick implements View.OnClickListener {
         @Override
