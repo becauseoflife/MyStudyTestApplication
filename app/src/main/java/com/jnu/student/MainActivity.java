@@ -3,6 +3,7 @@ package com.jnu.student;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -68,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
     Button btn1, btn2, btn3;*/
 
 /*    例2-18 SlidingDraw*/
-    SlidingDrawer mDrawer;
+/*    SlidingDrawer mDrawer;
     ImageButton imgBtn;
     ListView listView;
     LinearLayout layout;
-    String[] data = new String[]{"王者荣耀", "刺激战场", "开心消消乐"};
+    String[] data = new String[]{"王者荣耀", "刺激战场", "开心消消乐"};*/
 
+    /*    例3-2 Intent的数据传递*/
+    private Button btn2;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -224,8 +227,8 @@ public class MainActivity extends AppCompatActivity {
         }
     */
 
-    /* 例2-18 SlidingDraw*/
-    //在抽屉窗口中创建一个视图，显示数组内容
+/* 例2-18 SlidingDraw*/
+/*    //在抽屉窗口中创建一个视图，显示数组内容
     layout = findViewById(R.id.content);
     listView = new ListView(MainActivity.this);
     listView.setAdapter(new ArrayAdapter<String>(
@@ -267,7 +270,29 @@ public class MainActivity extends AppCompatActivity {
         public void onScrollEnded() {
             Toast.makeText(MainActivity.this, "拖动开始", Toast.LENGTH_SHORT).show();
         }
+    }*/
+
+/*    例3-2 Intent的数据传递*/
+        TextView txt2 = findViewById(R.id.textView2);
+        /*获取Intent中的Bundle 对象*/
+        Bundle bundle = this.getIntent().getExtras();
+
+        String str = bundle.getString("text");
+        txt2.setText(str);
+
+        btn2 = findViewById(R.id.button2);
+        btn2.setOnClickListener(new mClock());
     }
+
+    private class mClock implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            Intent intent2 = new Intent();
+            intent2.setClass(MainActivity.this, ChapterThreeActivity.class);
+            startActivityForResult(intent2, 0);
+        }
+    }
+
 /*    private class mclick implements View.OnClickListener {
         @Override
         public void onClick(View view) {

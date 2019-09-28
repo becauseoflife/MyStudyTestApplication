@@ -353,7 +353,7 @@
         android:textSize="20sp"/>
 -->
 <!--例2-18 SlidingDraw-->
-    <!--设置handle和content的id-->
+<!--    &lt;!&ndash;设置handle和content的id&ndash;&gt;
     <SlidingDrawer
         android:id="@+id/slidingdrawer"
         android:layout_width="fill_parent"
@@ -361,20 +361,35 @@
         android:handle="@+id/handle"
         android:content="@+id/content"
         android:orientation="vertical">
-        <!--设置handle，就是用一个图标按钮来处理滑动抽屉事件-->
+        &lt;!&ndash;设置handle，就是用一个图标按钮来处理滑动抽屉事件&ndash;&gt;
         <ImageButton
             android:id="@+id/handle"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:src="@drawable/arrow_up" />
-        <!--设置抽屉内容，当拖动抽屉时就会看见-->
+        &lt;!&ndash;设置抽屉内容，当拖动抽屉时就会看见&ndash;&gt;
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#2196F3"
+            android:background="#4B000000"
             android:focusable="true"
             android:orientation="vertical" >
         </LinearLayout>
-    </SlidingDrawer>
+    </SlidingDrawer>-->
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回第一个页面"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp" />
+
 </LinearLayout>
