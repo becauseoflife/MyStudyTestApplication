@@ -45,8 +45,7 @@
     <requestFocus/> &lt;!&ndash;获得焦点&ndash;&gt;-->
 
 <!--  上下文选项菜单 例3-3-->
-
-    <TextView
+<!--    <TextView
         android:id="@+id/Menu_text_view1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -73,4 +72,25 @@
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/Menu_text_view2"
         tools:layout_editor_absoluteX="0dp" />
+    -->
+<!--    消息对话框 例3-5 -->
+    <Button
+        android:id="@+id/botton_common_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="打开普通对话框"
+        app:layout_constraintBottom_toTopOf="@+id/button_input_box"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="114dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_input_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开输入对话框"
+        app:layout_constraintTop_toBottomOf="@+id/botton_common_box"
+        tools:layout_editor_absoluteX="114dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
